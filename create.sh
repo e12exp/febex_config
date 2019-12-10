@@ -11,3 +11,13 @@ for i in list slist tlist
 do
     ../setpar $DB $i > $i.out
 done
+CONFIG=$(../setpar febex.db file list | grep -oE "([0-9]+,? *){4}")
+
+HOSTNAME=$(echo $HOSTNAME | tr A-Z a-z)
+
+git branch | grep $HOSTNAME || git checkout -b $HOSTNAME
+git checkout $HOSTNAME 2>/dev/null
+git add *.h
+MSG="create.sh: created $DB on $HOSTNAME with modules=[$CONFIG]"
+echo "commit message: $MSG"
+git commit -m "$MSG"
