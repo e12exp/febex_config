@@ -13,8 +13,12 @@ do
 done
 CONFIG=$(../setpar febex.db file list | grep -oE "([0-9]+,? *){4}")
 
-HOSTNAME=$(echo $HOSTNAME | tr A-Z a-z)
-
+if test -z "$1"
+then
+    HOSTNAME=$(echo $HOSTNAME | tr A-Z a-z | sed s/[.].*// )
+else
+    HOSTNAME=$1
+fi
 git branch | grep $HOSTNAME || git checkout -b $HOSTNAME
 git checkout $HOSTNAME 2>/dev/null
 git add *.h
