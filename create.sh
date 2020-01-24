@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "Running create.sh to create config/febex.db from text files"
+git branch | grep $HOSTNAME || git checkout -b $HOSTNAME
+git checkout $HOSTNAME 2>&1 | grep -v already
 DB=febex.db
 cd $(dirname $0)
 
@@ -18,8 +20,6 @@ then
 else
     HOSTNAME=$1
 fi
-git branch | grep $HOSTNAME || git checkout -b $HOSTNAME
-git checkout $HOSTNAME 2>/dev/null
 git add *.h
 MSG="create.sh: created $DB on $HOSTNAME with modules=[$CONFIG]"
 #echo "commit message: $MSG"
