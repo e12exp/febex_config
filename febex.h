@@ -6,6 +6,9 @@ add sfp 4
 
 // write your modules here:
 add module 0 16
+add module 1 16
+add module 2 16
+add module 3 16
 
 #include "default/base.h" // base config for febex 
 #include "default/trigmode/single_self.h"
