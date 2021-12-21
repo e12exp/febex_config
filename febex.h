@@ -11,6 +11,4 @@ add module 2 16
 add module 3 16
 
 #include "default/base.h" // base config for febex 
-#include "default/trigmode/single_self.h"
-
 #include "thresholds.h"
