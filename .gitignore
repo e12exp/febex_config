@@ -2,3 +2,4 @@
 *.db
 *.db.commit
 *.out
+*.sample
