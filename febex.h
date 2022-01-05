@@ -12,3 +12,6 @@ add module 3 16
 
 #include "default/base.h" // base config for febex 
 #include "thresholds.h"
+set *.*.*.trigger_validation_src 0x100
+set *.*.*.discr_threshold_timing 50
+set *.*.*.discr_threshold_gamma 100
