@@ -5,10 +5,10 @@ Fast aka timing aka discriminator branch ##################################
     *.*.*.proton_trigger_walk_correction  (0x300140)        0
     *.*.*.discr_enable_walk_correction    (0x300140)        1
  Discriminator #0 ("Timing)") ---------------------------------------------
-    *.*.*.discr_threshold_timing          (0x300240)  MIXED 20 - 60
+    *.*.*.discr_threshold_timing          (0x300240)  MIXED 20 - 100
     *.*.*.trigger_timing_dst              (0x3002c0)        0x0000 aka 0b0000000 
  Discriminator #1 ("Gamma") -----------------------------------------------
-    *.*.*.discr_threshold_gamma           (0x300180)  MIXED 50 - 200
+    *.*.*.discr_threshold_gamma           (0x300180)  MIXED 50 - 250
     *.*.*.trigger_gamma_dst               (0x3002c0)        0x0000 aka 0b0000000 
  Discriminator #2 ("Proton") ----------------------------------------------
     *.*.*.proton_trigger_enable           (0x300140)        0
