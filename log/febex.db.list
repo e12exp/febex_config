@@ -24468,13 +24468,13 @@ SFP 3
 3.002.01.discr_enable_walk_correction          (0x300140) [0 -     1]: 1
 3.002.01.tracemode                             (0x300140) [raw, discriminator, mau, baseline, mwd, raw_50mhz]: raw (0)
 3.002.01.discr_hysteresis_threshold            (0x300140) [0 -  4095]: 100
-3.002.01.discr_threshold_gamma                 (0x300180) [0 -  4095]: 200
+3.002.01.discr_threshold_gamma                 (0x300180) [0 -  4095]: 220
 3.002.01.signal_delay                          (0x300180) [0 -  1023]: 60 (x 40 ns)
 3.002.01.trigger_timing_delay                  (0x3001c0) [0 -   255]: 0 (x 10 ns)
 3.002.01.trigger_validation_gate_length        (0x3001c0) [0 -   255]: 120 (x 10 ns)
 3.002.01.trigger_validation_delay              (0x3001c0) [0 -   255]: 70
 3.002.01.proton_trigger_gate_length            (0x3001c0) [0 -   255]: 84
-3.002.01.discr_threshold_timing                (0x300240) [0 -  4095]: 60
+3.002.01.discr_threshold_timing                (0x300240) [0 -  4095]: 80
 3.002.01.discr_threshold_proton                (0x300240) [0 -  4095]: 800
 3.002.01.trigger_timing_src                    (0x300280): 0b0010000000
 3.002.01.trigger_validation_src                (0x300280): 0b0100000000
