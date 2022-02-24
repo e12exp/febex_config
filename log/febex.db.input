@@ -1,5 +1,8 @@
 # 1 "febex.h"
+# 1 "<built-in>"
 # 1 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 1 "<command-line>" 2
 # 1 "febex.h"
 
 
@@ -120,4 +123,6 @@ set (1-2.0,2,4,6,8,10,12,14.*).discr_threshold_timing 20 ; set (1-2.0,2,4,6,8,10
 
 set 0.5.2 .opmode_run 0
 set 0.5.4 .opmode_run 0
+
+set (1-2.(1,3,5,7,9,11,13,15).*).discr_threshold_timing 60 ; set (1-2.(1,3,5,7,9,11,13,15).*).discr_threshold_gamma 200
 # 48 "febex.h" 2
