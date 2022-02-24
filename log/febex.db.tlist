@@ -1,0 +1,49 @@
+
+   ===== Module trigger bus (rows) <-> Backplane (cols) trigger matrix =====
+
+                                   === Backplane Lines (2 bit/col!) ===
+                                 /- B6: Busy (typ. OUT)
+                                 |  /- B5: General Purpose (IN/OUT)
+                                 |  |  /- B4: Readout Request (typ. OUT)
+                                 |  |  |  /- B3: General Purpose (IN/OUT)
+                                 |  |  |  |  /- B2: Readout Trigger T3 (typ. IN)
+                                 |  |  |  |  |  /- B1: Readout Trigger T2 (unused), G.P. (IN/OUT)
+                                 |  |  |  |  |  |  /- B0: Readout Trigger T1 (typ. IN)
+ == module triger lines ==      6| 5| 4| 3| 2| 1| 0| 
+ *.*.iomatrix_gpt1               .  I  .  .  .  .  .   0b00010000000000 aka 0x0400 
+ *.*.iomatrix_gpt2               .  .  .  O  .  .  .   0b00000010000000 aka 0x0080 
+ *.*.iomatrix_gpt3               .  .  .  .  .  .  .   0b00000000000000 aka 0x0000 
+ *.*.iomatrix_gpt4               .  .  .  .  .  .  .   0b00000000000000 aka 0x0000 
+ *.*.iomatrix_t1                 .  .  .  .  .  .  I   0b00000000000001 aka 0x0001 
+ *.*.iomatrix_t3                 .  .  .  .  I  .  .   0b00000000010000 aka 0x0010 
+ *.*.iomatrix_rorq               .  .  O  .  .  .  .   0b00001000000000 aka 0x0200 
+ *.*.iomatrix_busy               .  .  .  .  .  .  .   0b00000000000000 aka 0x0000 
+ *.*.veto_dst (??)               .  .  .  .  .  .  .   0b00000000000000 aka 0x0000 
+
+       '.': NC (0b00)    'I': input (0b01)     'O': output (0b10)
+       'X': (nonstd) input (0b11).      Lowercase (i, o, x): mixed.
+
+   ===== Channel trigger (rows) <-> Module (cols) trigger matrix =====
+
+                                  ==== same channel discriminators, src only ===
+                                 /- 9: (0x200) proton discriminator
+                                 |  /- 8: (0x100) gamma discriminator
+                                 |  |  /- 7: (0x80) timing discriminator 
+                                 |  |  |   ==== module trigger bus ====
+                                 |  |  |  /- 6: (0x40) Readout Request   
+                                 |  |  |  |  /- 5: (0x20) Readout T3 (src only)
+                                 |  |  |  |  |  /- 4: (0x10) Readout T1 (src only)
+                                 |  |  |  |  |  |  /- 3: (0x8) GPT4
+                                 |  |  |  |  |  |  |  /- 2: (0x4) GPT3
+                                 |  |  |  |  |  |  |  |  /- 1: (0x2) GPT2 
+                                 |  |  |  |  |  |  |  |  |  /- 0: (0x1) GPT1
+ == channel evt trig inputs ==  9| 8| 7| 6| 5| 4| 3| 2| 1| 0| 
+ *.*.*.trigger_timing_src        .  .  X  .  .  .  .  .  .  .   0b0010000000 aka 0x080 
+ *.*.*.trigger_validation_src    .  X  .  .  .  .  .  .  .  .   0b0100000000 aka 0x100 
+ == channel discr outputs ==    9| 8| 7| 6| 5| 4| 3| 2| 1| 0| 
+ *.*.*.trigger_timing_dst                 .        .  .  .  .   0b0000000000 aka 0x000 
+ *.*.*.trigger_gamma_dst                  .        .  .  .  .   0b0000000000 aka 0x000 
+ *.*.*.trigger_proton_dst                 .        .  .  X  .   0b0000000010 aka 0x002 
+
+       ' ': always NC    '.': NC    'X': connected    '?' some connected
+       Note: Some other settings also affect triggers, use slist to view.

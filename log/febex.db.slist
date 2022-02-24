@@ -1,0 +1,81 @@
+Fast aka timing aka discriminator branch ##################################
+    *.*.discr_integration_time            (0x300100)        24      (x 20 ns) 
+    *.*.discr_shift_right                 (0x300100)        3
+    *.*.discr_gaptime                     (0x300104)        50      (x 20 ns) 
+    *.*.*.proton_trigger_walk_correction  (0x300140)        0
+    *.*.*.discr_enable_walk_correction    (0x300140)        1
+ Discriminator #0 ("Timing)") ---------------------------------------------
+    *.*.*.discr_threshold_timing          (0x300240)  MIXED 20 - 50
+    *.*.*.trigger_timing_dst              (0x3002c0)        0x0000 aka 0b0000000 
+ Discriminator #1 ("Gamma") -----------------------------------------------
+    *.*.*.discr_threshold_gamma           (0x300180)  MIXED 50 - 170
+    *.*.*.trigger_gamma_dst               (0x3002c0)        0x0000 aka 0b0000000 
+ Discriminator #2 ("Proton") ----------------------------------------------
+    *.*.*.proton_trigger_enable           (0x300140)        0
+    *.*.*.proton_trigger_gate_length      (0x3001c0)        84
+    *.*.*.discr_threshold_proton          (0x300240)        800
+    *.*.*.trigger_proton_dst              (0x3002c0)        0x0002 aka 0b0000010 
+    *.*.*.proton_trigger_timing_delay     (0x3002c0)        0
+ Event recording trigger --------------------------------------------------
+    *.*.logic_gate_size                   (0x300130)        4040    (x 40 ns) 
+    *.*.*.trigger_enable_validation       (0x300140)        1
+    *.*.*.trigger_timing_delay            (0x3001c0)        0       (x 10 ns) 
+    *.*.*.trigger_validation_gate_length  (0x3001c0)        120     (x 10 ns) 
+    *.*.*.trigger_validation_delay        (0x3001c0)        70
+    *.*.*.trigger_timing_src              (0x300280)        0x0080 aka 0b0010000000 
+    *.*.*.trigger_validation_src          (0x300280)        0x0100 aka 0b0100000000 
+ Various trigger-related --------------------------------------------------
+    *.*.num_events_readout                (0x30012c)        50
+    *.*.veto_dst                          (0x300138)        0x0000 aka 0b00000000 
+    *.*.*.opmode_run                      (0x300140)  MIXED 0 - 1
+    *.*.*.trigger_feedback_busy           (0x300140)        0
+    *.*.*.discr_hysteresis_threshold      (0x300140)        100
+    *.*.iomatrix_gpt1                     (0x300200)        0x0400 aka 0b0000010000000000 
+    *.*.iomatrix_gpt2                     (0x300200)        0x0080 aka 0b0000000010000000 
+    *.*.iomatrix_gpt3                     (0x300204)        0x0000 aka 0b0000000000000000 
+    *.*.iomatrix_gpt4                     (0x300204)        0x0000 aka 0b0000000000000000 
+    *.*.iomatrix_t1                       (0x300208)        0x0001 aka 0b0000000000000001 
+    *.*.iomatrix_t3                       (0x300208)        0x0010 aka 0b0000000000010000 
+    *.*.iomatrix_rorq                     (0x30020c)        0x0200 aka 0b0000001000000000 
+    *.*.iomatrix_busy                     (0x30020c)        0x0000 aka 0b0000000000000000 
+Analysis branch ###########################################################
+    *.*.*.signal_delay                    (0x300180)        60      (x 40 ns) 
+MAU (Moving average unit) Filter ------------------------------------------
+    *.*.mau_integration_time              (0x30010c)        31      (x 40 ns) 
+    *.*.mau_shift_right                   (0x30010c)        3
+Baseline reconstruction and substraction ----------------------------------
+    *.*.bl_exclude_gatesize               (0x300108)        10000   (x 40 ns) 
+    *.*.bl_integration_time               (0x300108)        1023    (x 40 ns) 
+    *.*.use_fixed_bl                      (0x300134)        0
+    *.*.fixed_bl_val                      (0x300138)        25600
+    *.*.bl_shift_right                    (0x300100)        10
+Moving window deconvolution -----------------------------------------------
+    *.*.mwd_window_size                   (0x300110)        270     (x 40 ns) 
+    *.*.mwd_tau                           (0x300114)        875     (x 40 ns) 
+    *.*.mwd_shift_right                   (0x30010c)        11
+Peak finding and energy determination -------------------------------------
+    *.*.energy_gate_size                  (0x300104)        600     (x 20 ns) 
+    *.*.energy_integration_time           (0x300110)        63      (x 40 ns) 
+    *.*.energy_bias_correct               (0x300134)        0
+    *.*.energy_shift_right                (0x300114)        7
+QPID parameters -----------------------------------------------------------
+    *.*.qpid_t1                           (0x300118)        0       (x 40 ns) 
+    *.*.qpid_t2                           (0x300118)        49      (x 40 ns) 
+    *.*.qpid_t3                           (0x30011c)        74      (x 40 ns) 
+    *.*.qpid_t4                           (0x30011c)        250     (x 40 ns) 
+    *.*.qpid_integration_time             (0x300128)        2       (x 40 ns) 
+    *.*.qpid_delay                        (0xf01000)        10
+    *.*.qpid_tau_f                        (0xf01004)        15
+    *.*.qpid_tau_s                        (0xf01004)        83
+    *.*.qpid_nf_shift_right               (0x300120)        2
+    *.*.qpid_ns_shift_right               (0x300124)        2
+Time over threshold (TOT) parameters --------------------------------------
+    *.*.tot_threshold                     (0x300134)        32768
+    *.*.tot_enabled                       (0x300134)        1
+Operation modes and trace settings ----------------------------------------
+    *.*.trace_length                      (0x300130)        1000    (x 40 ns) 
+    *.*.*.opmode_enable_trace             (0x300140)        0
+    *.*.*.opmode_invert                   (0x300140)        1
+    *.*.*.tracemode                       (0x300140)        0
+Febex Addon Board Settings ------------------------------------------------
+    *.*.*.dac_baseline                    (0xf00000)        4096

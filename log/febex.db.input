@@ -1,0 +1,122 @@
+# 1 "febex.h"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 1 "<command-line>" 2
+# 1 "febex.h"
+
+
+
+
+add sfp 4
+
+
+add module 0 17
+add module 1 17
+add module 2 17
+add module 3 18
+
+# 1 "default/base.h" 1
+
+
+set *.*.discr_integration_time 24
+set *.*.discr_shift_right 3
+set *.*.discr_gaptime 50
+set *.*.*.proton_trigger_walk_correction 0
+set *.*.*.discr_enable_walk_correction 1
+
+set *.*.*.discr_threshold_timing 200
+set *.*.*.trigger_timing_dst 0
+
+set *.*.*.discr_threshold_gamma 200
+set *.*.*.trigger_gamma_dst 0
+
+set *.*.*.proton_trigger_enable 0
+set *.*.*.proton_trigger_gate_length 84
+set *.*.*.discr_threshold_proton 800
+set *.*.*.trigger_proton_dst 0x02
+set *.*.*.proton_trigger_timing_delay 0
+
+set *.*.logic_gate_size 4040
+set *.*.*.trigger_enable_validation 1
+set *.*.*.trigger_timing_delay 0
+set *.*.*.trigger_validation_gate_length 120
+set *.*.*.trigger_validation_delay 70
+set *.*.*.trigger_timing_src 0x80
+set *.*.*.trigger_validation_src 0x01
+
+set *.*.num_events_readout 50
+set *.*.veto_dst 0
+set *.*.*.opmode_run 1
+set *.*.*.trigger_feedback_busy 0
+set *.*.*.discr_hysteresis_threshold 100
+set *.*.iomatrix_gpt1 0x0400
+set *.*.iomatrix_gpt2 0x0080
+set *.*.iomatrix_gpt3 0x0000
+set *.*.iomatrix_gpt4 0x0000
+set *.*.iomatrix_t1 0x0001
+set *.*.iomatrix_t3 0x0010
+set *.*.iomatrix_rorq 0x0200
+set *.*.iomatrix_busy 0x0000
+
+set *.*.*.signal_delay 60
+
+set *.*.mau_integration_time 31
+set *.*.mau_shift_right 3
+
+set *.*.bl_exclude_gatesize 10000
+set *.*.bl_integration_time 1023
+set *.*.use_fixed_bl 0
+set *.*.fixed_bl_val 25600
+set *.*.bl_shift_right 10
+
+set *.*.mwd_window_size 270
+set *.*.mwd_tau 875
+set *.*.mwd_shift_right 11
+
+set *.*.energy_gate_size 600
+set *.*.energy_integration_time 63
+set *.*.energy_bias_correct 0
+set *.*.energy_shift_right 7
+
+set *.*.qpid_t1 0
+set *.*.qpid_t2 49
+set *.*.qpid_t3 74
+set *.*.qpid_t4 250
+set *.*.qpid_integration_time 2
+set *.*.qpid_delay 10
+set *.*.qpid_tau_f 15
+set *.*.qpid_tau_s 83
+set *.*.qpid_nf_shift_right 2
+set *.*.qpid_ns_shift_right 2
+
+set *.*.tot_threshold 32768
+set *.*.tot_enabled 0
+
+set *.*.trace_length 1000
+set *.*.*.opmode_enable_trace 0
+set *.*.*.opmode_invert 1
+set *.*.*.tracemode 0
+
+set *.*.*.dac_baseline 4096
+# 14 "febex.h" 2
+
+set *.*.tot_enabled 1
+set *.*.tot_threshold 32768
+
+
+
+set *.*.*.trigger_validation_src 0x100
+
+
+
+
+set *.16.*.opmode_run 0
+set 3.17.*.opmode_run 0
+set 1-2.2,3,6,7,10,11,14,15.9-10.opmode_run 0 ;
+# 45 "febex.h"
+set (*.*.*).discr_threshold_timing 50 ; set (*.*.*).discr_threshold_gamma 170
+set (1-2.0,2,4,6,8,10,12,14.*).discr_threshold_timing 20 ; set (1-2.0,2,4,6,8,10,12,14.*).discr_threshold_gamma 50
+
+# 1 "thresholds.h" 1
+# 48 "febex.h" 2

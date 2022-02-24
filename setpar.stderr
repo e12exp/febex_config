@@ -1,0 +1,4 @@
+Removing febex.db, if existing. Could not open file febex.db for reading.
+Creating new database.
+Reading commands from gcc -E pipe output.
+File written.
