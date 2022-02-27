@@ -2401,7 +2401,7 @@ SFP 0
 0.005.01.proton_trigger_timing_delay           (0x3002c0) [0 -   255]: 0
 0.005.01.dac_baseline                          (0xf00000) [0 - 16383]: 4096
 
-0.005.02.opmode_run                            (0x300140) [0 -     1]: 1
+0.005.02.opmode_run                            (0x300140) [0 -     1]: 0
 0.005.02.opmode_enable_trace                   (0x300140) [0 -     1]: 0
 0.005.02.opmode_invert                         (0x300140) [0 -     1]: 1
 0.005.02.proton_trigger_enable                 (0x300140) [0 -     1]: 0
