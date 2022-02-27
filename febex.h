@@ -4,6 +4,8 @@
 
 add sfp 4
 
+// Messel side
+
 // write your modules here:
 add module 0 17
 add module 1 17
@@ -46,3 +48,5 @@ GAMMA_DEFAULT(*.*.*)
 PROTON_DEFAULT(PROTON)
 
 #include "thresholds.h"
+
+//set *.*.*.opmode_enable_trace 1
