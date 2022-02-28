@@ -119,6 +119,7 @@ set (1-2.0,2,4,6,8,10,12,14.*).discr_threshold_timing 20 ; set (1-2.0,2,4,6,8,10
 
 # 1 "thresholds.h" 1
 
+set 0.0.0 .opmode_run 0
 
 set 0.5.2 .opmode_run 0
 set 0.5.4 .opmode_run 0

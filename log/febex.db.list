@@ -49,7 +49,7 @@ SFP 0
 0.000.qpid_tau_f                               (0xf01004) [0 - 65535]: 15
 0.000.qpid_tau_s                               (0xf01004) [0 - 65535]: 83
 
-0.000.00.opmode_run                            (0x300140) [0 -     1]: 1
+0.000.00.opmode_run                            (0x300140) [0 -     1]: 0
 0.000.00.opmode_enable_trace                   (0x300140) [0 -     1]: 0
 0.000.00.opmode_invert                         (0x300140) [0 -     1]: 1
 0.000.00.proton_trigger_enable                 (0x300140) [0 -     1]: 0
